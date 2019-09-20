@@ -1,0 +1,18 @@
+{
+  "source": [
+    "aws.glue"
+  ],
+  "detail-type": [
+    "Glue Job State Change"
+  ],
+  "detail": {
+    "state": [
+      "FAILED",
+      "TIMEOUT",
+      "STOPPED"
+    ],
+    "jobName": [
+      "uki-sand-glue-mi4cc-avaya"
+    ]
+  }
+}

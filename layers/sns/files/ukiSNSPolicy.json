@@ -1,0 +1,48 @@
+{
+  "Version": "2012-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "__default_statement_ID",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": [
+        "SNS:GetTopicAttributes",
+        "SNS:SetTopicAttributes",
+        "SNS:AddPermission",
+        "SNS:RemovePermission",
+        "SNS:DeleteTopic",
+        "SNS:Subscribe",
+        "SNS:ListSubscriptionsByTopic",
+        "SNS:Publish",
+        "SNS:Receive"
+      ],
+      "Resource": "${sns_top_arn}",
+      "Condition": {
+        "StringEquals": {
+          "AWS:SourceOwner": "${webstack_account_id}"
+        }
+      }
+    },
+    {
+      "Sid": "AWSEvents_${source_market_name}_${environment}_cloudwatch-mi4cc-avaya-glue-alerts_Id_0",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "events.amazonaws.com"
+      },
+      "Action": "sns:Publish",
+      "Resource": "${sns_top_arn}"
+    },
+    {
+      "Sid": "AWSEvents_${source_market_name}_${environment}_cloudwatch-mi4cc-avaya-glue-alerts_Id_1",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "events.amazonaws.com"
+      },
+      "Action": "sns:Publish",
+      "Resource": "${sns_top_arn}"
+    }
+  ]
+}
