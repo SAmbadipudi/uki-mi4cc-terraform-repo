@@ -25,3 +25,12 @@ variable "mi4cc_account_id" {
   }
 }
 
+variable "environment" {
+  description = "Specifies which environment the resources belongs to."
+  default = {
+    "default" = ""
+    "DEV"     = "DEV"
+    "TEST"    = "TEST"
+    "PROD"    = "PROD"
+  }
+}
