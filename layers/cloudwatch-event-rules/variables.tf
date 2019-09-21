@@ -4,33 +4,14 @@ variable "event_rules" {
   default = ["ActivityCodeStat","AgentByApplicationStat","AgentPerformanceStat","ApplicationStat","SkillsetStat","AgentLoginStat"]
 }
 
-#variable "input1" {
-#  description = "Username for DB connectivity"
-#  default = "bucket_name"
-#}
-#variable "bucket-name" {
-#  description = "Username for DB connectivity"
-#  default = "uki-sand-s3-mi4cc"
-#}
-#
-#variable "input2" {
-#  description = "Username for DB connectivity"
-#  default = "file_path"
-#}
-#
-#variable "file-path" {
-#  description = "Username for DB connectivity"
-#  default = "uki/contactcentre/avaya/config"
-#}
-##variable "input3" {
-#  description = "Username for DB connectivity"
-#  default = "glue_job_name"
-#}
-#
-#variable "glue-job-name" {
-#  description = "Username for DB connectivity"
-#  default = "uki-sand-glue-mi4cc-avaya"
-#}
+variable "bucket-name" {
+  description = "S3 bucke name"
+  default = "uki-sand-s3-mi4cc"
+}
+variable "glue-job-name" {
+  description = "Username for DB connectivity"
+  default = "uki-sand-glue-mi4cc-avaya"
+}
 
 variable "schedule_expression" {
    type        = "map"
@@ -53,12 +34,18 @@ variable "cloudwatch_event_rule_description" {
   default = "Trigger Glue job for the Avaya view"
 }
 
-variable "cloudwatch_lambda_st_id" {
-  description = "AWS Glue DB connection Name"
-  default = "AllowExecutionFromCloudWatch"
-}
 
-variable "lambda_arn" {
+variable "lambda_function_arn" {
   description = "Lambda arn"
   default = "arn:aws:iam::195211983652:role/uki_mi4cc_iam_role_lambda"
+}
+
+variable "environment" {
+  description = "Specifies which environment the resources belongs to."
+  default = {
+    "default" = ""
+    "DEV"     = "DEV"
+    "TEST"    = "TEST"
+    "PROD"    = "PROD"
+  }
 }
