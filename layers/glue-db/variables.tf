@@ -49,12 +49,3 @@ variable "sub-id" {
   default   =  "subnet-053beef343cd1ab9b"
 }
 
-variable "environment" {
-  description = "Specifies which environment the resources belongs to."
-  default = {
-    "default" = ""
-    "DEV"     = "DEV"
-    "TEST"    = "TEST"
-    "PROD"    = "PROD"
-  }
-}
