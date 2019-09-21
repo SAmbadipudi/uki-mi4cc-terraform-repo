@@ -4,33 +4,33 @@ variable "event_rules" {
   default = ["ActivityCodeStat","AgentByApplicationStat","AgentPerformanceStat","ApplicationStat","SkillsetStat","AgentLoginStat"]
 }
 
-variable "input1" {
-  description = "Username for DB connectivity"
-  default = "bucket_name"
-}
-variable "bucket-name" {
-  description = "Username for DB connectivity"
-  default = "uki-sand-s3-mi4cc"
-}
-
-variable "input2" {
-  description = "Username for DB connectivity"
-  default = "file_path"
-}
-
-variable "file-path" {
-  description = "Username for DB connectivity"
-  default = "uki/contactcentre/avaya/config"
-}
-variable "input3" {
-  description = "Username for DB connectivity"
-  default = "glue_job_name"
-}
-
-variable "glue-job-name" {
-  description = "Username for DB connectivity"
-  default = "uki-sand-glue-mi4cc-avaya"
-}
+#variable "input1" {
+#  description = "Username for DB connectivity"
+#  default = "bucket_name"
+#}
+#variable "bucket-name" {
+#  description = "Username for DB connectivity"
+#  default = "uki-sand-s3-mi4cc"
+#}
+#
+#variable "input2" {
+#  description = "Username for DB connectivity"
+#  default = "file_path"
+#}
+#
+#variable "file-path" {
+#  description = "Username for DB connectivity"
+#  default = "uki/contactcentre/avaya/config"
+#}
+##variable "input3" {
+#  description = "Username for DB connectivity"
+#  default = "glue_job_name"
+#}
+#
+#variable "glue-job-name" {
+#  description = "Username for DB connectivity"
+#  default = "uki-sand-glue-mi4cc-avaya"
+#}
 
 variable "schedule_expression" {
    type        = "map"
