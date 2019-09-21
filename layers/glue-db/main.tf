@@ -9,7 +9,7 @@ module "glue-db" {
  db-password = "${var.db-password}"
  db-username = "${var.db-username}"
  require-ssl = "${var.require-ssl}"
- glue-conn-name = "${var.source_market_name}-${lower(var.environment)}-glue-con-${var.project_name}-avaya"
+ glue-conn-name = "${var.source_market_name}-${lower("${lookup(var.environment, terraform.workspace)}")}-glue-con-${var.project_name}-avaya"
  avail-zone = "${var.avail-zone}"
  seg-id = "${var.seg-id}"
  sub-id = "${var.sub-id}"
