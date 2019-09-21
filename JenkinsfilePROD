@@ -15,7 +15,7 @@ def TerraApply(String LayerToDeploy, String Environment, String TerraAction) {
 }
 
 pipeline {
-    agent { label 'linux-01' }
+    agent { label 'master' }
     parameters {
             booleanParam(name: 'cloudwatch_event_rules', defaultValue: false, description: 'Create cloudwatch events rules')
             booleanParam(name: 'cloudwatch_sns', defaultValue: false, description: 'Create cloudwatch events rule for sns notifications')
@@ -30,7 +30,7 @@ pipeline {
     stages {
         stage('Download Repositories') {
            environment {
-                AWS_CREDENTIALS = credentials('uki_iam_user_backoffice_jenkins')
+                AWS_CREDENTIALS = credentials('uki_iam_user_jenkins')
                 AWS_ACCESS_KEY_ID = "${env.AWS_CREDENTIALS_USR}"
                 AWS_SECRET_ACCESS_KEY = "${env.AWS_CREDENTIALS_PSW}"
            }
@@ -40,8 +40,8 @@ pipeline {
                     checkout([
                         $class: 'GitSCM', branches: [[name: '*/master']],
                         extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'uki-mi4cc-terraform-modules']],
-                        userRemoteConfigs: [[url: 'git@bitbucket.org:tui-uk-dev/uki-mi4cc-terraform-modules.git',
-                        credentialsId:'21090fbd-d209-404d-9ad1-94d27279c940']]
+                        userRemoteConfigs: [[url: 'https://github.com/SAmbadipudi/uki-mi4cc-terraform-modules.git',
+                        credentialsId:'8bd2f3a7-f101-415a-add9-ead10a282a45']]
                     ])
                 }
 

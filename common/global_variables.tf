@@ -1,6 +1,6 @@
 variable "region" {
   description = "AWS region that will be used to create resources in."
-  default     = "eu-central-1"
+  default     = "us-west-2"
 }
 
 variable "source_market_name" {
@@ -19,7 +19,7 @@ variable "mi4cc_account_id" {
 
   default = {
     "default"   = ""
-    "DEV"       = "195211983652"
+    "DEV"       = "320132909094"
     "TEST"      = "124742628640"
     "PROD"      = "195211983652"
   }

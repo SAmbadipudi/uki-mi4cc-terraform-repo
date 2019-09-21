@@ -1,10 +1,10 @@
 # Makefile to kickoff terraform.
 # ####################################################
 #
-STATEBUCKET = uki-s3-mi4cc-terraform-state
-STATELOCKTABLE = mi4cc-terraform-state-lock
-STATEKEY = $(LAYER)/terraform.tfstate
-STATEREGION = eu-central-1
+#STATEBUCKET = uki-s3-mi4cc-terraform-state
+#STATELOCKTABLE = mi4cc-terraform-state-lock
+#STATEKEY = $(LAYER)/terraform.tfstate
+#STATEREGION = eu-central-1
 ##ROLEARN = arn:aws:iam::204770985410:role/uki_iam_role_jenkins_user
 #ROLEARN = arn:aws:iam::204770985410:role/uki_iam_role_jenkins_role_test
 
@@ -20,13 +20,15 @@ STATEREGION = eu-central-1
 first-run:
 	@echo "initialize remote state file"
 	cd layers/$(LAYER) && \
-    terraform init -backend-config="bucket=$(STATEBUCKET)" -backend-config="key=$(STATEKEY)" -backend-config="dynamodb_table=$(STATELOCKTABLE)" -backend-config="region=$(STATEREGION)"
+    terraform init
+##-backend-config="bucket=$(STATEBUCKET)" -backend-config="key=$(STATEKEY)" -backend-config="dynamodb_table=$(STATELOCKTABLE)" -backend-config="region=$(STATEREGION)"
 
 init:
 	@echo "initialize remote state file"
 	cd layers/$(LAYER) && \
         terraform workspace select $(WORKSPACE) || terraform workspace new $(WORKSPACE) && \
-	terraform init --force-copy -backend-config="bucket=$(STATEBUCKET)" -backend-config="key=$(STATEKEY)" -backend-config="dynamodb_table=$(STATELOCKTABLE)" -backend-config="region=$(STATEREGION)"
+	terraform init
+##--force-copy -backend-config="bucket=$(STATEBUCKET)" -backend-config="key=$(STATEKEY)" -backend-config="dynamodb_table=$(STATELOCKTABLE)" -backend-config="region=$(STATEREGION)"
 
 validate: init
 	@echo "running terraform validate"
