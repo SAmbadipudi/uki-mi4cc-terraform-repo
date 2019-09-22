@@ -34,3 +34,50 @@ variable "environment" {
     "PROD"    = "PROD"
   }
 }
+
+variable "Owner-CreatedBy" {
+  description = "Owner for this environment"
+  default     = "Sikinder Kodavath / sikinder.kodavath@tui.co.uk"
+}
+
+variable "Owner-Data" {
+  description = "Owner data for this environment"
+  default     = "David Wheatley / david.wheatley@tui.co.uk"
+}
+
+variable "Owner-Infra" {
+  description = "Owner infra for this environment"
+  default     = "Richard Kerr / richard.kerr@tui.co.uk"
+}
+
+variable "Project-Name" {
+  description = "Project Name"
+  default     = "Operation MI For Contact Centre"
+}
+
+variable "Project-SubProjectName" {
+  description = "Sub project name"
+  default     = "Avaya"
+}
+
+variable "Project-WBSCode" {
+  description = "WBS code for this project"
+  default     = "O6.0041.003816"
+}
+
+variable "technical_owner" {
+  description = "Technical Owner for this environment"
+  default     = "Richard Kerr / richard.kerr@tui.co.uk"
+}
+
+variable "billing_code" {
+  description = "Billing code for this environment"
+  default     = "O6.0041.003816"
+}
+
+variable "compliance" {
+  description = "Compliance for this environment"
+  default     = "Normal"
+}
+
+
