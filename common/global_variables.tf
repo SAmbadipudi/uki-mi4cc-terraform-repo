@@ -35,32 +35,32 @@ variable "environment" {
   }
 }
 
-variable "Owner-CreatedBy" {
+variable "owner-createdby" {
   description = "Owner for this environment"
   default     = "Sikinder Kodavath / sikinder.kodavath@tui.co.uk"
 }
 
-variable "Owner-Data" {
+variable "owner-data" {
   description = "Owner data for this environment"
   default     = "David Wheatley / david.wheatley@tui.co.uk"
 }
 
-variable "Owner-Infra" {
+variable "owner-infra" {
   description = "Owner infra for this environment"
   default     = "Richard Kerr / richard.kerr@tui.co.uk"
 }
 
-variable "Project-Name" {
+variable "project-name" {
   description = "Project Name"
   default     = "Operation MI For Contact Centre"
 }
 
-variable "Project-SubProjectName" {
+variable "project-subprojectname" {
   description = "Sub project name"
   default     = "Avaya"
 }
 
-variable "Project-WBSCode" {
+variable "project-wbscode" {
   description = "WBS code for this project"
   default     = "O6.0041.003816"
 }
