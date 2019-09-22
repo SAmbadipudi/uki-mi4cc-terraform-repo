@@ -14,14 +14,4 @@ module "glue-db" {
  seg-id = "${var.seg-id}"
  sub-id = "${var.sub-id}"
   
- owner-createdby  = "${var.owner-createdby}"
- owner-data  = "${var.owner-data}"
- owner-infra = "${var.owner-infra}"
- project-name = "${var.project-name}"
- project-subprojectname = "${var.project-subprojectname}"
- project-wbscode = "${var.project-wbscode}"
- technical_owner = "${var.technical_owner}"
- billing_code = "${var.billing_code}"
- compliance = "${var.compliance}"
-
 }
