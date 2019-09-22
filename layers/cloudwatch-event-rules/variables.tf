@@ -33,19 +33,3 @@ variable "cloudwatch_event_rule_description" {
   description = "AWS Glue DB connection Name"
   default = "Trigger Glue job for the Avaya view"
 }
-
-
-variable "lambda_function_arn" {
-  description = "Lambda arn"
-  default = "arn:aws:iam::195211983652:role/uki_mi4cc_iam_role_lambda"
-}
-
-variable "environment" {
-  description = "Specifies which environment the resources belongs to."
-  default = {
-    "default" = ""
-    "DEV"     = "DEV"
-    "TEST"    = "TEST"
-    "PROD"    = "PROD"
-  }
-}
