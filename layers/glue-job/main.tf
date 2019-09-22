@@ -7,7 +7,7 @@ module "glue-job" {
 
 
   jobnames = "${var.jobnames}"
-  script_location = "s3://${var.source_market_name}-${lower(var.environment)}-s3-${var.project_name}/uki/contactcentre/avaya/scripts/${var.source_market_name}-${lower(var.environment)}-s3-${var.project_name}-avaya-test/avaya_extracts_automation.py"
+  script_location = "s3://${var.source_market_name}-${lower(terraform.workspace)}-s3-${var.project_name}/uki/contactcentre/avaya/scripts/${var.source_market_name}-${lower(var.environment)}-s3-${var.project_name}-avaya-test/avaya_extracts_automation.py"
   connections     = "${var.connections}"
   TempDir         = "${var.TempDir}"
   extra-jars      = "${var.extra-jars}"
