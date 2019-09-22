@@ -23,5 +23,5 @@ module "cloudwatch_event_targets_configuration" {
     bucket-name = "${var.source_market_name}-${lower(terraform.workspace)}-s3-mi4cc"
     glue-job-name = "${var.source_market_name}-${lower(terraform.workspace)}-glue-mi4cc-avaya"
     event_taget_rule_name     = "${module.cloudwatch_event_rules_configuration.market_cloudwatch_event_rule_name}"
-    event_target_resource_arn = "arn:aws:iam::${lookup(var.mi4cc_account_id, terraform.workspace)}:role/test_glue"
+    event_target_resource_arn = "arn:aws:lambda:us-west-2:320132909094:function:eventwatch"
 }
