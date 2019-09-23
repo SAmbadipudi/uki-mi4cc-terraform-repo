@@ -7,7 +7,7 @@ variable "connections" {
 variable "jobnames" {
   description = "glue job name"
   type  = "list"
-  default  = ["uki-mi4cc-dev-one","uki-mi4cc-dev-two","uki-mi4cc-dev-three"]
+  default  = ["uki-test-job"]
 }
 
 variable "database_name" {
